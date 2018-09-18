@@ -7,8 +7,8 @@ This library allows user to access virtual reality (VR) and augmented reality (A
 UNSTABLE API
 The version of the WebXR Device API represented in this library is incomplete and may change at any time.
 
-Source https://immersive-web.github.io/webxr/
-Demo https://env-1339767.cloud.unispace.io/
+Source https://immersive-web.github.io/webxr/ \
+Demo https://env-1339767.cloud.unispace.io/ \
 Demo source code: https://github.com/treblereel/ar-with-webxr
 
 ![Alt Text](https://media.giphy.com/media/tHMgucnsrqUftbbWOC/giphy.gif)
