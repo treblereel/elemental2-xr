@@ -68,26 +68,25 @@ import jsinterop.annotations.JsType;
 public class XRSession implements EventTarget {
 
     // readonly
-    public XRDevice device;
-    // readonly
-    public boolean immersive;
-    // readonly
-    public XRPresentationContext outputContext;
-    // readonly
     public XREnvironmentBlendMode environmentBlendMode;
+    // readonly
+    public XRRenderState renderState;
 
-    public double depthNear;
-    public double depthFar;
-    public XRLayer baseLayer;
+    public native void updateRenderState();
 
-    public native Promise<XRFrameOfReference> requestFrameOfReference(String type);
+    public native void updateRenderState(XRRenderState state);
 
-    public native Promise<XRFrameOfReference> requestFrameOfReference(String type, XRFrameOfReferenceOptions options);
+    public native Promise<XRReferenceSpace> requestReferenceSpace(String type);
+
+    public native Promise<XRReferenceSpace> requestReferenceSpace(String type, XRFrameOfReferenceOptions options);
 
     public native XRInputSource[] getInputSources();
 
     /**
-     * The requestAnimationFrame() method tells the browser that you wish to perform an animation and requests that the browser call a specified function to update an animation before the next repaint. The method takes a callback as an argument to be invoked before the repaint.
+     * The XRSession method requestAnimationFrame(), much like the Window method of the same name, schedules a callback
+     * to be executed the next time the browser is ready to paint the session's virtual environment to the XR display.
+     * The specified callback is executed once before the next repaint; if you wish for it to be executed for the
+     * following repaint, you must call requestAnimationFrame() again. This can be done from within the callback itself.
      *
      * @param callback instance of XRFrameRequestCallback
      * @return handler id
@@ -116,8 +115,6 @@ public class XRSession implements EventTarget {
     public EventHandler onselectstart;
     // The onselect attribute is an Event handler IDL attribute for the select event type.
     public EventHandler onselectend;
-
-    public native Float32Array getTransformTo(XRCoordinateSystem other);
 
     public native void addEventListener(String type, EventListener listener, AddEventListenerOptionsUnionType options);
 

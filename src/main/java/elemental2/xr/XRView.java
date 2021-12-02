@@ -20,4 +20,5 @@ import jsinterop.annotations.JsType;
 public class XRView {
     public XREye eye;
     public Float32Array projectionMatrix;
+    public Float32Array transform;
 }

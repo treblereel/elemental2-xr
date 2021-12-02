@@ -8,7 +8,7 @@ import jsinterop.annotations.JsType;
  */
 @JsType
 public class XRHandedness {
-    public static String none = "";
+    public static String none = "none";
     public static String left = "left";
     public static String right = "right";
 }

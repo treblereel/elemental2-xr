@@ -1,6 +1,7 @@
 package elemental2.xr;
 
 import elemental2.webgl.WebGLFramebuffer;
+import elemental2.webgl.WebGLRenderingContext;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsType;
 
@@ -21,24 +22,21 @@ import jsinterop.annotations.JsType;
 @JsType(isNative = true, namespace = JsPackage.GLOBAL)
 public class XRWebGLLayer implements XRLayer {
 
+    public XRSession session;
     // Attributes
     public XRWebGLRenderingContext context;
 
     public boolean antialias;
-    public boolean depth;
-    public boolean stencil;
-    public boolean alpha;
-    public boolean multiview;
 
     public WebGLFramebuffer framebuffer;
     public long framebufferWidth;
     public long framebufferHeight;
 
-    public XRWebGLLayer(XRSession session, XRWebGLRenderingContext context) {
+    public XRWebGLLayer() {
 
     }
 
-    public XRWebGLLayer(XRSession session, XRWebGLRenderingContext context, XRWebGLLayerInit layerInit) {
+    public XRWebGLLayer(XRSession session, WebGLRenderingContext context) {
 
     }
 

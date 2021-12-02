@@ -1,6 +1,5 @@
 package elemental2.xr;
 
-import elemental2.promise.Promise;
 import elemental2.webgl.WebGLRenderingContext;
 import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsPackage;
@@ -18,10 +17,8 @@ public class XRWebGLRenderingContext extends WebGLRenderingContext {
 
     }
 
-    public native Promise<Void> setCompatibleXRDevice(XRDevice device);
-
     @JsOverlay
     public static XRWebGLRenderingContext of(WebGLRenderingContext o) {
-        return Js.cast(o);
+        return Js.uncheckedCast(o);
     }
 }

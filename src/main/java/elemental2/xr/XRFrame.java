@@ -15,14 +15,13 @@ import jsinterop.annotations.JsType;
 public class XRFrame {
 
     public XRSession session;
-    public XRView[] views;
 
     private XRFrame() {
 
     }
 
-    public native XRDevicePose getDevicePose(XRCoordinateSystem coordinateSystem);
+    public native XRPose getPose();
 
-    public native XRInputPose getInputPose(XRInputSource inputSource, XRCoordinateSystem coordinateSystem);
+    public native XRViewerPose getViewerPose(XRReferenceSpace referenceSpace);
 
 }

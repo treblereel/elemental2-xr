@@ -14,9 +14,9 @@ import jsinterop.base.Js;
  * Created by treblereel on 9/10/18.
  */
 @JsType(isNative = true, namespace = JsPackage.GLOBAL)
-public class XRNavigator extends elemental2.dom.Navigator {
+public class XRNavigator extends Navigator {
 
-    public XR xr;
+    public XRSystem xr;
 
     private XRNavigator(){
 
@@ -24,6 +24,8 @@ public class XRNavigator extends elemental2.dom.Navigator {
 
     @JsOverlay
     public static XRNavigator of(Navigator o) {
-        return Js.cast(o);
+        // Unchecked is necessary to allow polyfill to work
+        return Js.uncheckedCast(o);
     }
+
 }
